@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <title>Exercise 4</title>
+    </head>
+    <body>
+        <p id="tellstory"></p>
+        <script>
+            function tellStory() {
+                var name;
+                var number;
+                var color; 
+                var animal;
+                
+                name = document.story.fullname.value;
+                number = document.story.favoritenumber.value;
+                color = document.story.color.value;
+                animal = document.story.animal.value;
+                
+                document.getElementById("tellstory").innerHTML = "Hi my name is " name + "!" + "My favorite number is "  number + ", my favorite color is " + color + "and my favorite animal is a " + animal;  
+                
+            }
+        </script>
+        <form name="story" id="story" action="#" method="get">
+            <p>Name: <input type="text" name="fullname" id="fullName"></p>
+            <p>Favorite Number: <input type="text" name="favoritenumber" id="favoriteNumber"></p>
+            <table>
+                <tr>
+                    <td>Favorite Color:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="color" value="color1">Red<br>
+                        <input type="radio" name="color" value="color2">Blue<br>
+                        <input type="radio" name="color" value="color3">Green<br>
+                        <input type="radio" name="color" value="color4">Purple<br>                   
+                    </td>
+                  </tr>
+            </table>
+        </form>
+        <form name="select" action="#" method="get">
+            <p>Favorite Animal:
+                <select name="animal">
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                    <option value="rabbit">Rabbit</option>
+                </select></p>
+        </form>
+        <form>
+            <p><input type="button" name="tellstory" id="tellstory" value="Tell Story!" onclick="tellStory();"></p>
+        </form>
+        <hr>
+    </body>
+</html>
