@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <title>Unit 4 Examples</title>
+    </head>
+    <body>
+        <script>
+            function check() {
+                var first = document.example.exampleText.value;
+                var second = document.example.moreText.value;
+                first = first.trim; 
+                second = second.trim;
+                first = first.parseInt;
+                second = second.parseInt;
+                document.getElementById("words").innerHTML = first + "" + second;
+            }
+        </script>
+        <form name="example" id="example" action="#" method="get">
+            <p>First Input: <input type="text" name="exampleText" id="exampleText"></p>
+            <p>Second Input: <input type="text" name="moreText" id="moreText"></p>
+            <p><input type="button" name="go" id="go" value="Go!" onclick="check();"></p>
+        </form>
+        <hr>
+    </body>
+</html>
