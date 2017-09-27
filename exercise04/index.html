@@ -5,51 +5,43 @@
         <title>Exercise 4</title>
     </head>
     <body>
-        <p id="tellstory"></p>
         <script>
-            function tellStory() {
-                var name;
+            function showValues() {
+                var firstName;
                 var number;
                 var color; 
                 var animal;
                 
-                name = document.story.fullname.value;
-                number = document.story.favoritenumber.value;
+                firstName = document.getElementById("fn").value;
+                //alert(firstName); 
+                number = document.getElementById("num").value;
+                //alert(number)
                 color = document.story.color.value;
-                animal = document.story.animal.value;
+                //alert(color)
+                animal = document.getElementById("pet").value;
+                //alert(animal)
                 
-                document.getElementById("tellstory").innerHTML = "Hi my name is " name + "!" + "My favorite number is "  number + ", my favorite color is " + color + "and my favorite animal is a " + animal;  
-                
+                document.getElementById("tellstory").innerHTML = "Hello, my name is " + firstName + "!" + " My favorite number is " + number + ", my favorite color is " + color + " and I own a " + animal + ".";
             }
         </script>
-        <form name="story" id="story" action="#" method="get">
-            <p>Name: <input type="text" name="fullname" id="fullName"></p>
-            <p>Favorite Number: <input type="text" name="favoritenumber" id="favoriteNumber"></p>
-            <table>
-                <tr>
-                    <td>Favorite Color:</td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" name="color" value="color1">Red<br>
-                        <input type="radio" name="color" value="color2">Blue<br>
-                        <input type="radio" name="color" value="color3">Green<br>
-                        <input type="radio" name="color" value="color4">Purple<br>                   
-                    </td>
-                  </tr>
-            </table>
-        </form>
-        <form name="select" action="#" method="get">
+        <form name="story" id="TellStory" action="#" method="get">
+            <p>Name: <input type="text" name="firstName" id="fn"></p>
+            <p>Favorite Number: <input type="text" name="favoritenumber" id="num"></p>
+            <p>Favorite Color:<br>
+                    <input type="radio" name="color" value="red" id="colorRed">Red<br>
+                    <input type="radio" name="color" value="blue" id="colorBlue">Blue<br>
+                    <input type="radio" name="color" value="green" id="colorGreen">Green<br>
+                    <input type="radio" name="color" value="purple" id="colorPurple">Purple 
+            </p>
             <p>Favorite Animal:
-                <select name="animal">
+                <select name="animal" id="pet">
                     <option value="cat">Cat</option>
                     <option value="dog">Dog</option>
                     <option value="rabbit">Rabbit</option>
                 </select></p>
-        </form>
-        <form>
-            <p><input type="button" name="tellstory" id="tellstory" value="Tell Story!" onclick="tellStory();"></p>
+            <p><input type="button" name="go" id="go" value="Tell Story!" onclick="showValues();"></p>
         </form>
         <hr>
+        <p id="tellstory"></p>
     </body>
 </html>
