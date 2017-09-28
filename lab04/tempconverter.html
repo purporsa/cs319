@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Temperature Converter</title>
+    </head>
+    <body>
+        <h2>Temperature Converter</h2>
+        <script>
+            function declareVariables() {
+                var fahrenheit;
+                var celsius;
+                
+                fahrenheit = parseFloat(document.tempconvert.fahrenheit.value);
+                celsius = (fahrenheit - 32) * (5/9);
+                document.tempconvert.celsius.value = celsius;
+                document.tempconvert.celsius.style.backgroundColor = "lightgreen";
+                
+            }
+            function declareVariables2() {
+                var fahrenheit;
+                var celsius;
+                
+                celsius = parseFloat(document.tempconvert.celsius.value);
+                fahrenheit = (celsius * 9/5) + (32);
+                document.tempconvert.fahrenheit.value = fahrenheit;
+                document.tempconvert.fahrenheit.style.backgroundColor = "lightgreen";
+            }
+            
+        </script>
+        <form name="tempconvert" id="tc" action="#" method="get">
+            <p>Temperature in Fahrenheit:<br>
+                <input type="text" name="fahrenheit" id="f"></p>
+            <p>
+                <input type="button" name="f2c" id="f2c" value="F to C" onclick="declareVariables();"> 
+                
+                <input type="button" name="c2f" id="c2f" value="C to F" onclick="declareVariables2();"></p>
+            <p>Temperature in Celsius:<br>
+                <input type="text" name="celsius" id="c"></p>
+        </form>
+        
+    </body>
+    
+</html>
