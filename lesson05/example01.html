@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <title>Exercise 4</title>
+    </head>
+    <body>
+        <script>
+            function showValues() {
+                var firstName;
+                var number;
+                var color; 
+                var animal;
+                
+                firstName = document.getElementById("fn").value;
+                //alert(firstName); 
+                number = document.getElementById("num").value;
+                //alert(number)
+                color = document.story.color.value;
+                //alert(color)
+                animal = document.getElementById("pet").value;
+                //alert(animal)
+                
+                firstName = firstName.trim();
+                number = number.trim();
+                color = color.trim();
+                animal = animal.trim(); 
+                
+                if (name == "") {
+                    return false;
+                } else if (number == "") {
+                    return false;
+                } else if (color == ""){
+                    return false;
+                } else if (animal== "") {
+                    return false;
+                } else {
+                    return true;
+                }
+                
+                
+                document.getElementById("tellstory").innerHTML = "Hello, my name is " + firstName + "!" + " My favorite number is " + number + ", my favorite color is " + color + " and I own a " + animal + ".";
+            }
+        </script>
+        <form name="story" id="TellStory" action="#" method="get" onsubmit="return showValues();">
+            <p>Name: <input type="text" name="firstName" id="fn"></p>
+            <p>Favorite Number: <input type="text" name="favoritenumber" id="num"></p>
+            <p>Favorite Color:<br>
+                    <input type="radio" name="color" value="red" id="colorRed">Red<br>
+                    <input type="radio" name="color" value="blue" id="colorBlue">Blue<br>
+                    <input type="radio" name="color" value="green" id="colorGreen">Green<br>
+                    <input type="radio" name="color" value="purple" id="colorPurple">Purple 
+            </p>
+            <p>Favorite Animal:
+                <select name="animal" id="pet">
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                    <option value="rabbit">Rabbit</option>
+                </select></p>
+            <p><input type="submit" name="go" id="go" value="Tell Story!" ></p>
+        </form>
+        <hr>
+        <p><input type="text" id="tellstory" readonly> </p>
+    </body>
+</html>
