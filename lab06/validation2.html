@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <title>Lab 6</title>
+    </head>
+    <body>
+        <script>
+            function Validate() { 
+                //alert(It works!)
+                var firstName;
+                var lastName;
+                var emailAddress;
+                var age;
+                
+                firstName = document.validation.firstname.value;
+                firstName = firstName.trim();
+                parseInt(firstName);
+                
+                lastName = document.validation.lastname.value;
+                lastName = lastName.trim();
+                parseInt(lastName);
+                
+                emailAddress = document.validation.email.value;
+                emailAddress = emailAddress.trim();
+                parseInt(emailAddress);
+                
+                age = document.validation.age.value;
+                age = age.trim();
+                parseInt(age);
+                
+                if (firstName == "") {
+                    alert("Please type your first name.");
+                    return false;
+                } 
+                if (lastName == "") {
+                    alert("Please type your last name.");
+                    return false;
+                } 
+                if (emailAddress == "") {
+                    alert("Please type your email address.");
+                    return false;
+                } 
+                
+                if  (emailAddress.endsWith("@uwec.edu") == false) {
+                    alert("Please enter a UWEC email address.");
+                    return false;
+                }
+                   
+                if (age == "") {
+                    alert("Please type your age.");
+                    document.validation.age.focus();
+                    return false;
+                } 
+                
+                if (isNaN(age) == true){
+                        alert("Your input is invalid.");
+                        document.validation.age.focus();
+                        return false;
+                    }
+            
+                if (age<18) {
+                    alert("Please enter a valid age.");
+                    document.validation.age.focus();
+                    return false;
+                }
+                    
+                else {
+                    return true;
+                }
+            }
+        </script>
+        <form name="validation" id="validation" action="#" method="get" onsubmit="return Validate();">
+            <p>First Name: <input type="text" name="firstname" id="fn"> </p>
+            <p>Last Name: <input type="text" name="lastname" id="ln"> </p>
+            <p>Email Address: <input type="text" name="email" id="emailAd"> </p>
+            <p>Age: <input type="text" name="age" id="Age"> </p>
+            <p><input type="submit" name="submit" value="Submit" id="showInfo"> </p>
+        </form>
+    </body>
+    
+</html>
