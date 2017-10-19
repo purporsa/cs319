@@ -6,12 +6,27 @@
     </head>
     <body>
         <script>
-            
+            function displayFood() {
+                var fFood;
+                var sFood; 
+                
+                fFood = document.getFood.ffood.value; 
+                fFood = fFood.toLowerCase();
+                fFood = fFood.trim();
+                parseInt(fFood);
+                
+                sFood = document.getFood.sfood.value;
+                sFood = sFood.toLowerCase();
+                sFood = sFood.trim();
+                parseInt(sFood);
+                
+                alert(document.getElementById("getFood").innerHTML = "Your favorite foods are: " + fFood + " and " + sFood + ".");
+            }
         </script>
         <form name="getFood" id="getFood" action="#" method="get">
             <p>First Favorite Food: <input type="text" name="ffood" id="ffood"></p>
             <p>Second Favorite Food: <input type="text" name="sfood" id="sfood"></p>
-            <p><input type="button" name="submitFood" id="submitFood" value="Go!"></p>
+            <p><input type="button" name="submitFood" id="submitFood" value="Go!" onclick="displayFood();"></p>
         </form>
     </body>
 </html>
