@@ -6,11 +6,28 @@
     </head>
     <body>
         <script>
+            function validateAge() {
+                var age; 
+                
+                age = document.checkAge.Age.value;
+                age = age.trim();
+                parseInt(age);
+                
+                if (age == "") {
+                    alert("Please enter a valid age.");
+                    document.checkAge.Age.focus();
+                    return false; 
+                }
+                
+                else {
+                    return true;
+                }
+            }
             
         </script>
-        <form name="checkAge" id="checkAge" action="#" method="get">
+        <form name="checkAge" id="checkAge" action="#" method="get" onsubmit="return validateAge();">
             <p>How old are you?<br>
-            <input type="text" name="age" id="age"></p>
+            <input type="text" name="age" id="Age"></p>
             <p><input type="submit" name="submit=" id="submit" value="Submit"></p>
         </form>
     </body>
